@@ -94,7 +94,7 @@ public final class WebCrawlerTest {
 
     CrawlResult result = crawler.crawl(config.getStartPages());
 
-    assertThat(result.getUrlsVisited()).isEqualTo(0);
+    assertThat(result.getvisitedUrls()).isEqualTo(0);
     assertThat(result.getWordCounts()).isEmpty();
   }
 
@@ -113,7 +113,7 @@ public final class WebCrawlerTest {
 
     CrawlResult result = crawler.crawl(config.getStartPages());
 
-    assertThat(result.getUrlsVisited()).isEqualTo(0);
+    assertThat(result.getvisitedUrls()).isEqualTo(0);
     assertThat(result.getWordCounts()).isEmpty();
   }
 
@@ -134,7 +134,7 @@ public final class WebCrawlerTest {
     CrawlResult result = crawler.crawl(config.getStartPages());
 
     assertWithMessage("Returned the wrong number of popular words")
-        .that(result.getUrlsVisited())
+        .that(result.getvisitedUrls())
         .isEqualTo(3);
     assertWithMessage("Returned the correct number of popular words, but the wrong words or counts")
         .that(result.getWordCounts())
@@ -173,7 +173,7 @@ public final class WebCrawlerTest {
 
     CrawlResult result = crawler.crawl(config.getStartPages());
 
-    assertThat(result.getUrlsVisited()).isEqualTo(2);
+    assertThat(result.getvisitedUrls()).isEqualTo(2);
     assertThat(result.getWordCounts().entrySet())
         .containsExactly(
             Map.entry("the", 4),
@@ -200,7 +200,7 @@ public final class WebCrawlerTest {
 
     CrawlResult result = crawler.crawl(config.getStartPages());
 
-    assertThat(result.getUrlsVisited()).isEqualTo(3);
+    assertThat(result.getvisitedUrls()).isEqualTo(3);
     assertThat(result.getWordCounts().entrySet())
         .containsExactly(
             Map.entry("brown", 2),
@@ -225,7 +225,7 @@ public final class WebCrawlerTest {
 
     CrawlResult result = crawler.crawl(config.getStartPages());
 
-    assertThat(result.getUrlsVisited()).isEqualTo(1);
+    assertThat(result.getvisitedUrls()).isEqualTo(1);
     assertThat(result.getWordCounts().entrySet())
         .containsExactly(
             Map.entry("the", 2),
@@ -256,7 +256,7 @@ public final class WebCrawlerTest {
 
     CrawlResult result = crawler.crawl(config.getStartPages());
 
-    assertThat(result.getUrlsVisited()).isEqualTo(2);
+    assertThat(result.getvisitedUrls()).isEqualTo(2);
     assertThat(result.getWordCounts().entrySet())
         .containsExactly(
             Map.entry("the", 2),
@@ -288,7 +288,7 @@ public final class WebCrawlerTest {
 
     CrawlResult result = crawler.crawl(config.getStartPages());
 
-    assertThat(result.getUrlsVisited()).isEqualTo(2);
+    assertThat(result.getvisitedUrls()).isEqualTo(2);
     assertThat(result.getWordCounts().entrySet())
         .containsExactly(
             Map.entry("the", 4),
@@ -315,7 +315,7 @@ public final class WebCrawlerTest {
 
     CrawlResult result = crawler.crawl(config.getStartPages());
 
-    assertThat(result.getUrlsVisited()).isEqualTo(5);
+    assertThat(result.getvisitedUrls()).isEqualTo(5);
     assertThat(result.getWordCounts().entrySet())
         .containsExactly(
             Map.entry("the", 8),

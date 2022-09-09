@@ -11,14 +11,14 @@ import java.util.Objects;
 public final class CrawlResult {
 
   private final Map<String, Integer> wordCounts;
-  private final int urlsVisited;
+  private final int visitedUrls;
 
   /**
    * Constructs a {@link CrawlResult} with the given word counts and visited URL count.
    */
-  private CrawlResult(Map<String, Integer> wordCounts, int urlsVisited) {
+  private CrawlResult(Map<String, Integer> wordCounts, int visitedUrls) {
     this.wordCounts = wordCounts;
-    this.urlsVisited = urlsVisited;
+    this.visitedUrls = visitedUrls;
   }
 
   /**
@@ -48,8 +48,8 @@ public final class CrawlResult {
    *
    * <p>When computing this value for a given crawl, the same URL is never counted twice.
    */
-  public int getUrlsVisited() {
-    return urlsVisited;
+  public int getvisitedUrls() {
+    return visitedUrls;
   }
 
   /**
@@ -68,9 +68,9 @@ public final class CrawlResult {
     }
 
     /**
-     * Sets the total number of URLs visited. See {@link #getUrlsVisited()}.
+     * Sets the total number of URLs visited. See {@link #getvisitedUrls()}.
      */
-    public Builder setUrlsVisited(int pageCount) {
+    public Builder setvisitedUrls(int pageCount) {
       this.pageCount = pageCount;
       return this;
     }

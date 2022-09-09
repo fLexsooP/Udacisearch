@@ -20,7 +20,7 @@ public final class CrawlResultWriterTest {
     counts.put("foobar", 98);
     CrawlResult result =
         new CrawlResult.Builder()
-            .setUrlsVisited(17)
+            .setvisitedUrls(17)
             .setWordCounts(counts)
             .build();
 
@@ -41,7 +41,7 @@ public final class CrawlResultWriterTest {
             ".*\"bar\".*:.*1," +
             ".*\"foobar\".*:.*98" +
             ".*}.*,.*" +
-            ".*\"urlsVisited\".*:.*17" +
+            ".*\"visitedUrls\".*:.*17" +
             ".*}.*", Pattern.DOTALL);
 
     assertThat(written).matches(expected);

@@ -55,13 +55,13 @@ final class SequentialWebCrawler implements WebCrawler {
     if (counts.isEmpty()) {
       return new CrawlResult.Builder()
           .setWordCounts(counts)
-          .setUrlsVisited(visitedUrls.size())
+          .setvisitedUrls(visitedUrls.size())
           .build();
     }
 
     return new CrawlResult.Builder()
         .setWordCounts(WordCounts.sort(counts, popularWordCount))
-        .setUrlsVisited(visitedUrls.size())
+        .setvisitedUrls(visitedUrls.size())
         .build();
   }
 
