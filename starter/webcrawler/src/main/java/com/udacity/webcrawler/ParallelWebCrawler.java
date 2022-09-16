@@ -100,7 +100,8 @@ final class ParallelWebCrawler implements WebCrawler {
     protected Void compute() {
       if(crawlTaskDepth == 0 || clock.instant().isAfter(deadline))
         return null;
-      visitedUrls.add(url);
+      if (!isIgnore(url))
+        visitedUrls.add(url);
       PageParser.Result result = parserFactory.get(url).parse();
       for (Map.Entry<String, Integer> e : result.getWordCounts().entrySet()) {
         if (counts.containsKey(e.getKey())) {
